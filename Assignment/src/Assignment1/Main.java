@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		HopeSoupKitchen hsk = new HopeSoupKitchen("Hope Soup Kitchen");
+		HopeSoupKitchen hsk = new HopeSoupKitchen("Hope Soup Kitchen");//organisation info
 		HopeSoupKitchen soupkitchen = new HopeSoupKitchen("Jalan Sultanah, Alor Setar", "04123456789");
 		HopeSoupKitchen info = new HopeSoupKitchen();
 		
@@ -20,7 +20,7 @@ public class Main {
 		if (login == 1)
 		{
 	
-			ProgramDescription program = new ProgramDescription();
+			ProgramDescription program = new ProgramDescription();//user can see what programs we have
 			ProgramDescription program1 = new ProgramDescription("Soup Kitchen", "Jalan Sultanah, Alor Setar", "9am until 8pm", "Monday to Saturday");
 			program1.printMenu();
 			ProgramDescription program2 = new ProgramDescription("Hope Virtual Run", "Home or anywhere you are", "10am until 1pm", "Saturday");
@@ -34,7 +34,7 @@ public class Main {
 			int action = sc.nextInt();
 			User user = new User();
 			
-			if(action == 1) {
+			if(action == 1) {//participant for soup kitchen, the participant receive free foods
 			
 				user.printMenu();
 				System.out.print("Enter day: ");
@@ -53,7 +53,7 @@ public class Main {
 				
 			}
 			
-			else if(action == 2) {
+			else if(action == 2) {//participant for virtual run
 				double fee = 10;
 				System.out.printf("Total fee: RM%.2f\n" ,fee);
 				user.paymentMethod();
@@ -72,14 +72,14 @@ public class Main {
 				
 			}
 			
-			else if (action == 3) {
+			else if (action == 3) {//Donation's user
 				user.printMenu();
 				System.out.print("Would you like to donate using the menu set price or your own price?"
 						+ "\n1. Menu price "
 						+ "\n2. Own price"
 						+ "\nEnter choice: ");
 				int choice = sc.nextInt();
-				if (choice == 1) {
+				if (choice == 1) {//donation price refer to menu 
 					
 					System.out.print("Enter session: ");
 					int session = sc.nextInt();
@@ -97,7 +97,7 @@ public class Main {
 					System.out.printf("Total donation: RM%.2f\n", donator.getTotalDonation());
 					
 				}
-				else if (choice == 2) {
+				else if (choice == 2) {//usually for company members
 					System.out.print("Enter total donation: RM");
 					double donation = sc.nextDouble();
 					user.paymentMethod();
@@ -119,16 +119,14 @@ public class Main {
 				
 			}
 			System.out.println("\n----------------------------------------------------------------");
-			
+			//user can see the promotion/rewards
 			Advertisement donation = new Advertisement(4);
 			Advertisement virtualRun = new Advertisement("medal", "E-certificate");
 			Advertisement link = new Advertisement();
 			
 			}
-			
 		
-		
-		else if (login == 2) {
+		else if (login == 2) {//admin access finance
 			
 			Finance f = new Finance();
 			Finance finance = new Finance(10, 100);
