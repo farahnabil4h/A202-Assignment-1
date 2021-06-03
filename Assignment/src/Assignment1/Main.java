@@ -33,7 +33,9 @@ public class Main {
 					+ "\nEnter action: ");
 			int action = sc.nextInt();
 			User user = new User();
+			
 			if(action == 1) {
+			
 				user.printMenu();
 				System.out.print("Enter day: ");
 				String day = sc.next();
@@ -48,15 +50,18 @@ public class Main {
 				System.out.println("Email: " +user.email);
 				System.out.println("Day: " +participant1.day);
 				System.out.println("Session: " +participant1.session);
+				
 			}
 			
-			else if (action == 2) {
+			else if(action == 2) {
 				double fee = 10;
 				System.out.printf("Total fee: RM%.2f\n" ,fee);
 				user.paymentMethod();
 				System.out.print("Enter payment method: ");
 				char paymentMethod = sc.next().charAt(0);
 				User participant2 = new User(paymentMethod);
+				System.out.println("\n----------------------------------------------------------------"
+						+ "\nRegistered Details: ");
 				System.out.println("Name: " +user.userName);
 				System.out.println("Contact number: " +user.contactNumber);
 				System.out.println("Email: " +user.email);
@@ -64,6 +69,7 @@ public class Main {
 					System.out.println("Payment method: Online banking");
 				else if (paymentMethod == 'B' || paymentMethod == 'b')
 					System.out.println("Payment method: Credit/Debit card");
+				
 			}
 			
 			else if (action == 3) {
@@ -77,13 +83,14 @@ public class Main {
 					
 					System.out.print("Enter session: ");
 					int session = sc.nextInt();
-					System.out.println("Enter pax: ");
+					System.out.print("Enter pax: ");
 					int pax = sc.nextInt();
 					user.paymentMethod();
 					System.out.print("Enter payment method: ");
 					char paymentMethod = sc.next().charAt(0);
 					User donator = new User(session, pax, paymentMethod);
-					System.out.println();
+					System.out.println("\n----------------------------------------------------------------"
+							+ "\nRegistered Details: ");
 					System.out.println("Name: " +user.userName);
 					System.out.println("Contact number: " +user.contactNumber);
 					System.out.println("Email: " +user.email);
@@ -102,6 +109,8 @@ public class Main {
 					}
 					else
 						System.out.println("No tax reduction");
+					System.out.println("\n----------------------------------------------------------------"
+							+ "\nRegistered Details: ");
 					System.out.println("Name: " +user.userName);
 					System.out.println("Contact number: " +user.contactNumber);
 					System.out.println("Email: " +user.email);
@@ -110,11 +119,14 @@ public class Main {
 				
 			}
 			System.out.println("\n----------------------------------------------------------------");
+			
 			Advertisement donation = new Advertisement(4);
 			Advertisement virtualRun = new Advertisement("medal", "E-certificate");
 			Advertisement link = new Advertisement();
-	
-		}
+			
+			}
+			
+		
 		
 		else if (login == 2) {
 			
@@ -134,8 +146,8 @@ public class Main {
 			System.out.println("Invalid!");
 			System.exit(0);
 		}
-
-
 	}
-
 }
+	
+
+
